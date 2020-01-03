@@ -17,6 +17,7 @@ Get-ChildItem .\* -Include *.xls* | ForEach-Object {
             New-Item -ItemType Directory -Force -Path $path
         }
         $newFile = $path + $n + ".csv"
+        Write-host "Convertendo a planilha: " + $newFile
         $ws.SaveAs($newFile, 62)
         Write-Host $n
     }
